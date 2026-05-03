@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası — Soundra</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    h2 { font-size: 18px; font-weight: 600; margin-top: 40px; margin-bottom: 12px; }
+    p { margin-bottom: 14px; color: #333; }
+    ul { margin: 0 0 14px 20px; color: #333; }
+    ul li { margin-bottom: 6px; }
+    .meta { color: #888; font-size: 14px; margin-bottom: 40px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>Gizlilik Politikası</h1>
+  <p class="meta">Son güncelleme: 3 Mayıs 2026</p>
+
+  <p>Soundra ("biz", "uygulama") olarak gizliliğinize saygı duyuyor ve kişisel verilerinizi korumayı taahhüt ediyoruz. Bu politika, Soundra mobil uygulamasını kullandığınızda hangi verileri topladığımızı, nasıl kullandığımızı ve haklarınızın neler olduğunu açıklamaktadır.</p>
+
+  <h2>1. Topladığımız Veriler</h2>
+  <p>Soundra'ya kayıt olurken ve uygulamayı kullanırken aşağıdaki veriler toplanmaktadır:</p>
+  <ul>
+    <li><strong>Hesap bilgileri:</strong> E-posta adresi, kullanıcı adı, görünen ad ve şifre (bcrypt ile şifreli olarak saklanır)</li>
+    <li><strong>Profil bilgileri:</strong> Biyografi, profil fotoğrafı ve gizlilik tercihleri</li>
+    <li><strong>İçerik verileri:</strong> Yüklediğiniz ses ve video dosyaları, kapak görselleri ve içerik açıklamaları</li>
+    <li><strong>Etkileşim verileri:</strong> Oylar (Süper Beğeni), yorumlar, favoriler ve takip ilişkileri</li>
+    <li><strong>Jeton işlemleri:</strong> Jeton kazanma ve harcama geçmişi</li>
+    <li><strong>Cihaz bilgileri:</strong> Push bildirimleri için Firebase Cloud Messaging (FCM) cihaz token'ı</li>
+    <li><strong>Kullanım verileri:</strong> Uygulama içi etkileşimler ve içerik keşif geçmişi</li>
+  </ul>
+
+  <h2>2. Verileri Nasıl Kullanıyoruz</h2>
+  <ul>
+    <li>Hesabınızı oluşturmak ve yönetmek</li>
+    <li>İçeriklerinizi yayımlamak, depolamak ve akışını sağlamak</li>
+    <li>Haftalık sıralama ve liderlik tablosunu oluşturmak</li>
+    <li>İçerik moderasyonu ve platform güvenliğini sağlamak</li>
+    <li>Push bildirimleri göndermek (tercihlerinize göre)</li>
+    <li>Platformu geliştirmek ve teknik sorunları gidermek</li>
+  </ul>
+
+  <h2>3. Verilerinizi Kimlerle Paylaşıyoruz</h2>
+  <p>Kişisel verilerinizi üçüncü taraflara satmıyoruz. Verileriniz yalnızca aşağıdaki hizmet sağlayıcılarla, hizmetin işleyişi için gerekli ölçüde paylaşılmaktadır:</p>
+  <ul>
+    <li><strong>Cloudflare R2:</strong> Ses, video, görsel ve avatar dosyalarının depolanması</li>
+    <li><strong>Firebase (Google):</strong> Push bildirimlerinin iletilmesi</li>
+    <li><strong>PostgreSQL veritabanı sağlayıcımız:</strong> Hesap ve içerik verilerinin saklanması</li>
+  </ul>
+
+  <h2>4. Veri Saklama</h2>
+  <p>Hesabınız aktif olduğu sürece verileriniz saklanır. Hesabınızı sildiğinizde kişisel bilgileriniz sistemden kalıcı olarak kaldırılır (soft-delete sonrası tam silme). Yüklediğiniz içerikler, hesap silinmesinin ardından depolama sistemlerimizden de kaldırılır.</p>
+
+  <h2>5. Güvenlik</h2>
+  <p>Verilerinizi korumak için aşağıdaki önlemleri alıyoruz:</p>
+  <ul>
+    <li>Şifreler bcrypt algoritması (12 tur) ile hashlenerek saklanır</li>
+    <li>Oturum yönetimi kısa ömürlü JWT erişim token'ları ile sağlanır</li>
+    <li>API erişimleri rate limiting ile korunmaktadır</li>
+    <li>Medya dosyalarına erişim ön imzalı URL'ler (45 dakika geçerli) ile sınırlandırılmıştır</li>
+  </ul>
+
+  <h2>6. Push Bildirimleri</h2>
+  <p>Günlük jeton hatırlatma bildirimleri isteğe bağlıdır (opt-in). İçerik onay/red bildirimleri gibi hesap işlemlerine ilişkin bildirimler hizmetin temel bir parçasıdır. Bildirim tercihlerinizi uygulama içindeki profil ayarlarından değiştirebilirsiniz.</p>
+
+  <h2>7. Çocukların Gizliliği</h2>
+  <p>Soundra, 13 yaşın altındaki bireylere yönelik değildir. 13 yaşından küçük bir kullanıcıya ait veri topladığımızı fark edersek, söz konusu hesabı ve verileri derhal sileriz.</p>
+
+  <h2>8. Haklarınız</h2>
+  <p>Kişisel verilerinize ilişkin aşağıdaki haklara sahipsiniz:</p>
+  <ul>
+    <li>Verilerinize erişim ve bunları görüntüleme</li>
+    <li>Profil bilgilerinizi güncelleme</li>
+    <li>Hesabınızı ve tüm verilerinizi kalıcı olarak silme</li>
+    <li>Push bildirimlerini devre dışı bırakma</li>
+  </ul>
+  <p>Bu haklarınızı kullanmak için aşağıdaki e-posta adresi üzerinden bizimle iletişime geçebilirsiniz.</p>
+
+  <h2>9. Bu Politikadaki Değişiklikler</h2>
+  <p>Gizlilik politikamızı zaman zaman güncelleyebiliriz. Önemli değişiklikler olduğunda uygulama içi bildirim veya e-posta ile sizi bilgilendireceğiz. Güncel politikaya her zaman <a href="https://soundra.net/privacy">soundra.net/privacy</a> adresinden ulaşabilirsiniz.</p>
+
+  <h2>10. İletişim</h2>
+  <p>Gizlilik politikamıza ilişkin sorularınız için:</p>
+  <p><strong>E-posta:</strong> <a href="mailto:privacy@soundra.net">privacy@soundra.net</a><br>
+  <strong>Web:</strong> <a href="https://soundra.net">soundra.net</a></p>
+
+  <hr>
+  <p style="font-size: 13px; color: #aaa; text-align: center;">© 2026 Soundra. Tüm hakları saklıdır.</p>
+
+</body>
+</html>
